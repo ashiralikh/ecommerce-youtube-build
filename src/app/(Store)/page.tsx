@@ -9,7 +9,10 @@ export const revalidate = 60;  // revalidate this page every 60 seconds
 export default async function Home() {
   const prodects = await getAllProducts();
   const categories = await getAllCategories(); 
- 
+ console.log(
+  crypto.randomUUID().slice(0, 5) +
+  `>>>Reradering Home page for product cache ${prodects.length} products and ${categories.length} categories` 
+ );
   return (
     <div>
     <BlackFridayBanner/>
